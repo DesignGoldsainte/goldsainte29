@@ -67,5 +67,35 @@
         <a class="franchise" href="./franchise-faq.html">Franchise FAQ</a>
       </div>
     </div>
+
+    <script>
+      var drawerlogomarkSealGreen2Image = document.getElementById(
+        "drawerlogomarkSealGreen2Image"
+      );
+      if (drawerlogomarkSealGreen2Image) {
+        drawerlogomarkSealGreen2Image.addEventListener("click", function (e) {
+          window.location.href = "./index1.html";
+        });
+      }
+      var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
+      var observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              const targetElement = entry.target;
+              targetElement.classList.add("animate");
+              observer.unobserve(targetElement);
+            }
+          }
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+      
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.observe(scrollAnimElements[i]);
+      }
+      </script>
   </body>
 </html>
