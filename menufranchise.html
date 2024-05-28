@@ -72,7 +72,11 @@
       var drawerlogomarkSealGreen2Image = document.getElementById(
         "drawerlogomarkSealGreen2Image"
       );
-  
+      if (drawerlogomarkSealGreen2Image) {
+        drawerlogomarkSealGreen2Image.addEventListener("click", function (e) {
+          window.location.href = "./index.html";
+        });
+      }
       var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
       var observer = new IntersectionObserver(
         (entries) => {
